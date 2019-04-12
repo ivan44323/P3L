@@ -128,9 +128,10 @@ class Page extends CI_Controller{
   }
 
   function transaksi_penjualan(){
-    $data['transaksipenjualan'] = $this->transaksi_penjualan_model->getAll();
-    $data['transaksipenjualan_jasaservice'] = $this->transaksi_penjualan_model->getAllJasaService();
-    $data['transaksipenjualan_sparepart'] = $this->transaksi_penjualan_model->getAllPenjualanSparepart();
+    $data['transaksi'] = $this->transaksi_penjualan_model->getAll();
+		$data['sparepart_nama'] = $this->transaksi_penjualan_model->getAllNamaSparepart(); 
+    $data['jasaservice_nama'] = $this->transaksi_penjualan_model->getAllNamaJasaService();
+    $data['pegawai_nama'] = $this->transaksi_penjualan_model->getAllNamaPegawai();
     $data['temp'] = 0;
     $data['search_keyword'] = " ";
     $data['content'] = 'Content/transaksi_penjualan';

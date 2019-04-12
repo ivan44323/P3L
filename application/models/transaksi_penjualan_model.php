@@ -1,22 +1,39 @@
 <?php
 	defined('BASEPATH') OR exit('No direct script access allowed');
 
-	class sparepart_model extends CI_model{
+	class transaksi_model extends CI_model{
 
-		private $_table = "stok_sparepart";
+		private $_table = "detail_transaksi";
 
+		public $id_transaksi;
+		public $qty_transaksi;
+		public $total_transaksi;
 		public $id_sparepart;
-		public $nama_sparepart;
-		public $merk_sparepart;
-		public $id_rak_sparepart;
-		public $jumlah_sparepart;
-		public $jumlah_min;
-		public $harga_jual_sparepart;
-		public $harga_beli_sparepart;
-		public $id_type_sparepart;
+		public $id_jasa_service;
+		public $id_pegawai;
+		public $id_detail_transaksi;
+		public $no_polisi;
 		
 		public function rules(){
 			return [
+				[
+					'field' => 'id_transaksi',
+					'label' => 'id_transaksi',
+					'rules' => 'required'
+				],
+
+				[
+					'field' => 'qty_transaksi',
+					'label' => 'qty_transaksi',
+					'rules' => 'required'
+				],
+				
+				[
+					'field' => 'total_transaksi',
+					'label' => 'total_transaksi',
+					'rules' => 'required'
+				],
+
 				[
 					'field' => 'id_sparepart',
 					'label' => 'id_sparepart',
@@ -24,50 +41,26 @@
 				],
 
 				[
-					'field' => 'nama_sparepart',
-					'label' => 'nama_sparepart',
-					'rules' => 'required'
-				],
-				
-				[
-					'field' => 'merk_sparepart',
-					'label' => 'merk_sparepart',
-					'rules' => 'required'
-				],
-
-				[
-					'field' => 'id_rak_sparepart',
-					'label' => 'id_rak_sparepart',
-					'rules' => 'required'
-				],
-
-				[
-					'field' => 'jumlah_sparepart',
-					'label' => 'jumlah_sparepart',
+					'field' => 'id_jasa_service',
+					'label' => 'id_jasa_service',
 					'rules' => 'required'
 				],				
 
 				[
-					'field' => 'jumlah_min',
-					'label' => 'jumlah_min',
+					'field' => 'id_pegawai',
+					'label' => 'id_pegawai',
 					'rules' => 'required'
 				],
 
 				[
-					'field' => 'harga_jual_sparepart',
-					'label' => 'harga_jual_sparepart',
+					'field' => 'id_detail_transaksi',
+					'label' => 'id_detail_transaksi',
 					'rules' => 'required'
 				],
 
 				[
-					'field' => 'harga_beli_sparepart',
-					'label' => 'harga_beli_sparepart',
-					'rules' => 'required'
-				],
-
-				[
-					'field' => 'id_type_sparepart',
-					'label' => 'id_type_sparepart',
+					'field' => 'no_polisi',
+					'label' => 'no_polisi',
 					'rules' => 'required'
 				]
 			];
@@ -76,32 +69,32 @@
 		public function getAll(){
 
 			$this->db->select('*');
-			$this->db->from('stok_sparepart');
-			$this->db->join('type_sparepart','stok_sparepart.id_type_sparepart=type_sparepart.id_type_sparepart','inner');
- 
+			$this->db->from('detail_transaksi');
+			$this->db->join('stok_sparepart','detail_transaksi.id_sparepart=stok_sparepart.id_sparepart','inner');
+			$this->db->join('jasa_service','detail_transaksi.id_jasa_service=jasa_service.id_jasa_service','inner');
+			
 			$query = $this->db->get()->result();
 
 			return $query;
 		}
 
-		public function getById($id_sparepart){
+		public function getById($id_transaksi){
 			
-			return $this->db->get_where($this->_table, ["id_sparepart" => $id_sparepart])->row();
+			return $this->db->get_where($this->_table, ["id_transaksi" => $id_transaksi])->row();
 		}
 
 		public function insert(){
 
 			 $post = $this->input->post();
 
+			 $this->id_transaksi = $post["id_transaksi"];
+			 $this->qty_transaksi = $post["qty_transaksi"];
+			 $this->total_transaksi = $post["total_transaksi"];
 			 $this->id_sparepart = $post["id_sparepart"];
-			 $this->nama_sparepart = $post["nama_sparepart"];
-			 $this->merk_sparepart = $post["merk_sparepart"];
-			 $this->id_rak_sparepart = $post["id_rak_sparepart"];
-			 $this->jumlah_sparepart = $post["jumlah_sparepart"];
-			 $this->jumlah_min = $post["jumlah_min"];
-			 $this->harga_jual_sparepart = $post["harga_jual_sparepart"];
-			 $this->harga_beli_sparepart = $post["harga_beli_sparepart"];
-			 $this->id_type_sparepart = $post["id_type_sparepart"];
+			 $this->id_jasa_service = $post["id_jasa_service"];
+			 $this->id_pegawai = $post["id_pegawai"];
+			 $this->id_detail_transaksi = $post["id_detail_transaksi"];
+			 $this->no_polisi = $post["no_polisi"];
 			 
 			 $this->db->insert($this->_table, $this);
 
@@ -111,50 +104,69 @@
 		{
 			 $post = $this->input->post();
 			
+			 $this->id_transaksi = $post["id_transaksi"];
+			 $this->qty_transaksi = $post["qty_transaksi"];
+			 $this->total_transaksi = $post["total_transaksi"];
 			 $this->id_sparepart = $post["id_sparepart"];
-			 $this->nama_sparepart = $post["nama_sparepart"];
-			 $this->merk_sparepart = $post["merk_sparepart"];
-			 $this->id_rak_sparepart = $post["id_rak_sparepart"];
-			 $this->jumlah_sparepart = $post["jumlah_sparepart"];
-			 $this->jumlah_min = $post["jumlah_min"];
-			 $this->harga_jual_sparepart = $post["harga_jual_sparepart"];
-			 $this->harga_beli_sparepart = $post["harga_beli_sparepart"];
-			 $this->id_type_sparepart = $post["id_type_sparepart"];
+			 $this->id_jasa_service = $post["id_jasa_service"];
+			 $this->id_pegawai = $post["id_pegawai"];
+			 $this->id_detail_transaksi = $post["id_detail_transaksi"];
+			 $this->no_polisi = $post["no_polisi"];
 
-			$this->db->update($this->_table, $this, array('id_sparepart' => $post['id_sparepart']));
+			$this->db->update($this->_table, $this, array('id_transaksi' => $post['id_transaksi']));
 		}
 
 		public function delete($id)
 		{
-			return $this->db->delete($this->_table, array("id_sparepart" => $id));
+			return $this->db->delete($this->_table, array("id_transaksi" => $id));
 		}
 
-		public function search_sparepart($keyword)
+		public function search_transaksi($keyword)
 		{
+			 $this->id_transaksi = $post["id_transaksi"];
+			 $this->qty_transaksi = $post["qty_transaksi"];
+			 $this->total_transaksi = $post["total_transaksi"];
 			 $this->id_sparepart = $post["id_sparepart"];
-			 $this->nama_sparepart = $post["nama_sparepart"];
-			 $this->merk_sparepart = $post["merk_sparepart"];
-			 $this->id_rak_sparepart = $post["id_rak_sparepart"];
-			 $this->jumlah_sparepart = $post["jumlah_sparepart"];
-			 $this->jumlah_min = $post["jumlah_min"];
-			 $this->harga_jual_sparepart = $post["harga_jual_sparepart"];
-			 $this->harga_beli_sparepart = $post["harga_beli_sparepart"];
-			 $this->id_type_sparepart = $post["id_type_sparepart"];
+			 $this->id_jasa_service = $post["id_jasa_service"];
+			 $this->id_pegawai = $post["id_pegawai"];
+			 $this->id_detail_transaksi = $post["id_detail_transaksi"];
+			 $this->no_polisi = $post["no_polisi"];
 
-			$result = $this->db->get('stok_sparepart')->result();
+			$result = $this->db->get('detail_transaksi')->result();
 
 			return $result;
 		}
 
-		public function getAllTypeSparepart(){
+		public function getAllNamaSparepart(){
 
 			$this->db->select('*');
-			$this->db->from('type_sparepart');
+			$this->db->from('stok_sparepart');
  
 			$query = $this->db->get()->result();
 
 			return $query;
 		}
 
+		public function getAllNamaJasaService(){
+
+			$this->db->select('*');
+			$this->db->from('jasa_service');
+ 
+			$query = $this->db->get()->result();
+
+			return $query;
+		
+
+		}	
+
+		public function getAllNamaPegawwai(){
+
+			$this->db->select('*');
+			$this->db->from('pegawai');
+ 
+			$query = $this->db->get()->result();
+
+			return $query;
+		}
 	}
 ?>

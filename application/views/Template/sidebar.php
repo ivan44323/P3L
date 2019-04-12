@@ -33,7 +33,7 @@
                       
                       <li><a><i class="fa fa-desktop"></i> Transaksi <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                          <li><a href="<?php echo site_url('Page/transaksi_penjualan');?>">Input Penjualan</a></li>
+                          <li><a href="<?php echo site_url('Page/transaksi_penjualan');?>">Input Transaksi</a></li>
                         </ul>
                       </li>
                       
@@ -47,25 +47,6 @@
                           <li><a href="<?php echo site_url('Page/input_kendaraan_customer'); ?>">Input Kendaraan Customer</a></li>
                         </ul>
                       </li>
-                      
-                      <!--<li><a><i class="fa fa-table"></i> Laporan <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                          <li><a>Laporan Penjualan</a></li>
-                        </ul>
-                      </li>
-                      
-                      <li><a><i class="fa fa-bar-chart-o"></i> Gudang <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                          <li><a>Stok Barang</a></li>
-                        </ul>
-                      </li>
-                      
-                      <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                          <li><a>Cooming Soon</a></li>
-                          <li><a>Cooming Soon</a></li>
-                        </ul>
-                      </li>-->
 
                   <?php endif;?>
 

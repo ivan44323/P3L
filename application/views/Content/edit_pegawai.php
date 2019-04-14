@@ -13,7 +13,7 @@
           <div class="x_content">
           <form class="form-horizontal form-label-left" action="<?php echo site_url('Pegawai/edit');?>" method="post">
               <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12">ID Customer</label>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">ID Pegawai</label>
                 <div class="col-md-2 col-sm-6 col-xs-12">
                   <input type="text" id="id_pegawai" class="form-control col-md-7 col-xs-12" name="id_pegawai" value="<?php echo $pegawai_edit->id_pegawai ?>" readonly="readonly">
                 </div>

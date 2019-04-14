@@ -12,31 +12,32 @@
         <div class="x_panel">
           <div class="x_content">
             <form class="form-horizontal form-label-left" action="<?php echo base_url('Supplier/insert');?>" method="post">
-              <div class="form-group">
+              
+              <!--<div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">ID Supplier</label>
                 <div class="col-md-2 col-sm-6 col-xs-12">
-                  <input type="text" id="id_supplier" class="form-control col-md-7 col-xs-12" name="ID_SUPPLIER">
+                  <input type="text" id="id_supplier" class="form-control col-md-7 col-xs-12" name="id_supplier">
                 </div>
-              </div>
+              </div>-->
 
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Supplier</label>
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                  <input type="text" id="nama_supplier" class="form-control col-md-7 col-xs-12" name="NAMA_SUPPLIER">
+                  <input type="text" id="nama_supplier" class="form-control col-md-7 col-xs-12" name="nama_supplier">
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Alamat Supplier</label>
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                  <textarea id="alamat_supplier" class="form-control" name="ALAMAT_SUPPLIER"></textarea>
+                  <textarea id="alamat_supplier" class="form-control" name="alamat_supplier"></textarea>
                 </div>
               </div>
               
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Telp Supplier</label>
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                  <input type="text" id="telp" class="form-control col-md-7 col-xs-12" name="TELP">
+                  <input type="text" id="telp" class="form-control col-md-7 col-xs-12" name="telp">
                 </div>
               </div>
 
@@ -45,14 +46,14 @@
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Sales</label>
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                  <input type="text" id="nama_sales" class="form-control col-md-7 col-xs-12" name="NAMA_SALES">
+                  <input type="text" id="nama_sales" class="form-control col-md-7 col-xs-12" name="nama_sales">
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Telp Sales</label>
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                  <input type="text" id="telepon_sales" class="form-control col-md-7 col-xs-12" name="TELEPON_SALES">
+                  <input type="text" id="telepon_sales" class="form-control col-md-7 col-xs-12" name="telepon_sales">
                 </div>
               </div>
 
@@ -107,27 +108,27 @@
                       <?php echo $temp ?>
                     </td>
                     <td>
-                      <?php echo $supplier->ID_SUPPLIER ?>
+                      <?php echo $supplier->id_supplier ?>
                     </td>
                     <td>
-                      <?php echo $supplier->NAMA_SUPPLIER ?>
+                      <?php echo $supplier->nama_supplier ?>
                     </td>
                     <td>
-                      <?php echo $supplier->ALAMAT_SUPPLIER ?>
+                      <?php echo $supplier->alamat_supplier ?>
                     </td>
                     <td>
-                      <?php echo $supplier->TELP ?>
+                      <?php echo $supplier->telp ?>
                     </td>
                     <td>
-                      <?php echo $supplier->NAMA_SALES ?>
+                      <?php echo $supplier->nama_sales ?>
                     </td>
                     <td>
-                      <?php echo $supplier->TELEPON_SALES ?>
+                      <?php echo $supplier->telepon_sales ?>
                     </td>
                     <td width="250">
-                      <a href="<?php echo site_url('Supplier/edit/'. $supplier->ID_SUPPLIER) ?>"
+                      <a href="<?php echo site_url('Supplier/edit/'. $supplier->id_supplier) ?>"
                       class="btn btn-dark btn-sm"><i class="fa fa-edit"></i> Edit</a>
-                      <a href="<?php echo site_url('Supplier/delete/'. $supplier->ID_SUPPLIER) ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                      <a href="<?php echo site_url('Supplier/delete/'. $supplier->is_supplier) ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
                     </td> 
                   </tr>
                 <?php endforeach; ?>    

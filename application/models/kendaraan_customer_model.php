@@ -5,6 +5,7 @@
 
 		private $_table = "kend_customer";
 
+		public $id_kend_customer;
 		public $no_polisi;
 		public $id_customer;
 		public $id_type;
@@ -44,13 +45,13 @@
 			return $query;
 		}
 
-		public function getById($no_polisi){
+		public function getById($id_kend_customer){
 
 			$this->db->select('*');
 			$this->db->from('kend_customer');
 			$this->db->join('type_motor','kend_customer.id_type=type_motor.id_type','inner');
 			$this->db->join('customer','kend_customer.id_customer=customer.id_customer','inner');
-			$this->db->where('kend_customer.no_polisi',$no_polisi);
+			$this->db->where('kend_customer.no_polisi',$id_kend_customer);
 			
 			return $query = $this->db->get()->row();
 		}
@@ -72,21 +73,23 @@
 		{
 			$post = $this->input->post();
 			
+			 $this->id_kend_customer = $post["id_kend_customer"];
 			 $this->no_polisi = $post["no_polisi"];
 			 $this->id_customer = $post["id_customer"];
 			 $this->id_type = $post["id_type"];
 
-			$this->db->update($this->_table, $this, array('no_polisi' => $post['no_polisi']));
+			$this->db->update($this->_table, $this, array('id_kend_customer' => $post['id_kend_customer']));
 		}
 
 		public function delete($id)
 		{
-			return $this->db->delete($this->_table, array("no_polisi" => $id));
+			return $this->db->delete($this->_table, array("id_kend_customer" => $id));
 		}
 
 		public function search_customer($keyword)
 		{
-			$this->db->like('no_polisi',$keyword);
+			$this->db->like('id_kend_customer',$keyword);
+			$this->db->or_like('no_polisi',$keyword);
 			$this->db->or_like('id_customer',$keyword);
 			$this->db->or_like('id_type',$keyword);
 

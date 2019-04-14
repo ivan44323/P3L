@@ -17,11 +17,11 @@
 		
 		public function rules(){
 			return [
-				[
+				/*[
 					'field' => 'id_pegawai',
 					'label' => 'id_pegawai',
 					'rules' => 'required'
-				],
+				],*/
 
 				[
 					'field' => 'id_role',
@@ -94,7 +94,7 @@
 
 			 $post = $this->input->post();
 
-			 $this->id_pegawai = $post["id_pegawai"];
+			 //$this->id_pegawai = $post["id_pegawai"];
 			 $this->id_role = $post["id_role"];
 			 $this->nama_pegawai = $post["nama_pegawai"];
 			 $this->alamat_pegawai = $post["alamat_pegawai"];

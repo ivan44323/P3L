@@ -11,11 +11,11 @@
 		public function rules(){
 
 			return [
-				[
+				/*[
 					'field' => 'id_jasa_service',
 					'label' => 'id_jasa_service',
 					'rules' => 'required'
-				],
+				],*/
 
 				[
 					'field' => 'nama_jasa',
@@ -46,7 +46,7 @@
 
 			 $post = $this->input->post();
 
-			 $this->id_jasa_service = $post["id_jasa_service"];
+			 //$this->id_jasa_service = $post["id_jasa_service"];
 			 $this->nama_jasa = $post["nama_jasa"];
 			 $this->harga_jual_jasa = $post["harga_jual_jasa"];
 

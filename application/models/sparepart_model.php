@@ -17,11 +17,11 @@
 		
 		public function rules(){
 			return [
-				[
+				/*[
 					'field' => 'id_sparepart',
 					'label' => 'id_sparepart',
 					'rules' => 'required'
-				],
+				],*/
 
 				[
 					'field' => 'nama_sparepart',

@@ -15,11 +15,11 @@
 		public function rules(){
 
 			return [
-				[
+				/*[
 					'field' => 'id_supplier',
 					'label' => 'id_supplier',
 					'rules' => 'required'
-				],
+				],*/
 
 				[
 					'field' => 'nama_supplier',
@@ -67,7 +67,7 @@
 
 			 $post = $this->input->post();
 
-			 $this->id_supplier = $post["id_supplier"];
+			 //$this->id_supplier = $post["id_supplier"];
 			 $this->nama_supplier = $post["nama_supplier"];
 			 $this->alamat_supplier = $post["alamat_supplier"];
 			 $this->telp = $post["telp"];

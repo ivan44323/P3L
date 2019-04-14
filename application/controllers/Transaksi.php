@@ -34,7 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				redirect(site_url('Page/transaksi_penjualan'));
 			}
 
-			$data["transaksi_edit"] = $transaksi_jasa->getById($id);
+			$data["transaksi_edit"] = $transaksi->getById($id);
 
 			$data['transaksi'] = $this->transaksi_penjualan_model->getAll();
 

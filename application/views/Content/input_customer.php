@@ -12,12 +12,12 @@
         <div class="x_panel">
           <div class="x_content">
             <form class="form-horizontal form-label-left" action="<?php echo site_url('Customer/insert');?>" method="post">
-              <div class="form-group">
+              <!--<div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">ID Customer</label>
                 <div class="col-md-2 col-sm-6 col-xs-12">
                   <input type="text" id="id_customer" class="form-control col-md-7 col-xs-12" name="id_customer">
                 </div>
-              </div>
+              </div>-->
 
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Customer</label>

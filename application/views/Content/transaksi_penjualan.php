@@ -69,12 +69,12 @@
                 </div>
               </div>
 
-							<div class="form-group">
+							<!--<div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">ID Detail Transaksi</label>
                 <div class="col-md-2 col-sm-6 col-xs-12">
                   <input type="text" id="id_detail_transaksi" class="form-control col-md-7 col-xs-12" name="id_detail_transaksi">
                 </div>
-              </div>
+              </div>-->
 
 							<div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Nomor Polisi</label>
@@ -82,7 +82,7 @@
 								<select class="form-control" name="no_polisi">
                       <option></option>
                     <?php foreach($polisi_no as $polisi_no): ?>
-                      <option value="<?php echo $polisi_no->no_polisi; ?>"></option>
+                      <option value="<?php echo $polisi_no->no_polisi; ?>"><?php echo $polisi_no->no_polisi; ?></option>
                     <?php endforeach; ?>
                   </select>
                 </div>
@@ -185,39 +185,39 @@
 								</tr>
 							</thead>
               <tbody>
-                <?php foreach ($transaksi_jasa as $transaksi_jasa):{$temp++;} ?>
+                <?php foreach ($transaksi as $transaksi):{$temp++;} ?>
                   <tr>
                     <td>
                       <?php echo $temp ?>
                     </td>
                     <td>
-                      <?php echo $transaksi_jasa->id_transaksi ?>
+                      <?php echo $transaksi->id_transaksi ?>
                     </td>
                     <td>
-                      <?php echo $transaksi_jasa->qty_transaksi ?>
+                      <?php echo $transaksi->qty_transaksi ?>
                     </td>
                     <td>
-                      <?php echo $transaksi_jasa->total_transaksi ?>
+                      <?php echo $transaksi->total_transaksi ?>
                     </td>
                     <td>
-                      <?php echo $transaksi_jasa->nama_sparepart ?>
+                      <?php echo $transaksi->nama_sparepart ?>
                     </td>
                     <td>
-                      <?php echo $transaksi_jasa->nama_jasa ?>
+                      <?php echo $transaksi->nama_jasa ?>
                     </td>
                     <td>
-                      <?php echo $transaksi_jasa->nama_pegawai ?>
+                      <?php echo $transaksi->nama_pegawai ?>
                     </td>
                     <td>
-                      <?php echo $transaksi_jasa->id_detail_transaksi ?>
+                      <?php echo $transaksi->id_detail_transaksi ?>
                     </td>
                     <td>
-                      <?php echo $transaksi_jasa->no_polisi ?>
+                      <?php echo $transaksi->no_polisi ?>
                     </td>
                     <td width="250">
-                      <a href="<?php echo site_url('Transaksi/edit/'.$transaksi_jasa->id_transaksi) ?>"
+                      <a href="<?php echo site_url('Transaksi/edit/'.$transaksi->id_transaksi) ?>"
                       class="btn btn-dark btn-sm"><i class="fa fa-edit"></i> Edit</a>
-                      <a href="<?php echo site_url('Transaksi/delete/'.$transaksi_jasa->id_transaksi) ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                      <a href="<?php echo site_url('Transaksi/delete/'.$transaksi->id_transaksi) ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
                     </td> 
                   </tr>
                 <?php endforeach; ?>    

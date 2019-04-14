@@ -12,6 +12,7 @@ class Page extends CI_Controller{
     $this->load->model('pegawai_model');
     $this->load->model('sparepart_model');
     $this->load->model('kendaraan_customer_model');
+    $this->load->model('transaksi_penjualan_model');
 
     if($this->session->userdata('logged_in') !== TRUE){
       redirect('Home');

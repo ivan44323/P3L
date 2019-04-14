@@ -1,7 +1,7 @@
 <?php
 	defined('BASEPATH') OR exit('No direct script access allowed');
 
-	class transaksi_model extends CI_model{
+	class transaksi_penjualan_model extends CI_model{
 
 		private $_table = "detail_transaksi";
 
@@ -14,7 +14,6 @@
 		public $id_detail_transaksi;
 		public $no_polisi;
 		public $status_transaksi;
-		public $cek_transaksi = "diproses";
 		
 		public function rules(){
 			return [
@@ -54,11 +53,11 @@
 					'rules' => 'required'
 				],
 
-				[
+				/*[
 					'field' => 'id_detail_transaksi',
 					'label' => 'id_detail_transaksi',
 					'rules' => 'required'
-				],
+				],*/
 
 				[
 					'field' => 'no_polisi',
@@ -82,16 +81,28 @@
 			$this->db->join('jasa_service','detail_transaksi.id_jasa_service=jasa_service.id_jasa_service','inner');
 			$this->db->join('pegawai','detail_transaksi.id_pegawai=pegawai.id_pegawai','inner');
 			$this->db->join('kend_customer','detail_transaksi.no_polisi=kend_customer.no_polisi','inner');
-			$this->db->where('detail_transaksi.status',$cek_transaksi);
 			
 			$query = $this->db->get()->result();
 
 			return $query;
 		}
 
-		public function getById($id_transaksi){
+		public function getByStatus($status_transaksi){
 			
-			return $this->db->get_where($this->_table, ["id_transaksi" => $id_transaksi])->row();
+			$this->db->select('*');
+			$this->db->from('detail_transaksi');
+			$this->db->join('stok_sparepart','detail_transaksi.id_sparepart=stok_sparepart.id_sparepart','inner');
+			$this->db->join('jasa_service','detail_transaksi.id_jasa_service=jasa_service.id_jasa_service','inner');
+			$this->db->join('pegawai','detail_transaksi.id_pegawai=pegawai.id_pegawai','inner');
+			$this->db->join('kend_customer','detail_transaksi.no_polisi=kend_customer.no_polisi','inner');
+			$this->db->where('detail_transaksi.status',$status_transaksi);
+			return $query = $this->db->get()->row();
+			//return $this->db->get_where($this->_table, ["id_transaksi" => $id_transaksi])->row();
+		}
+
+		public function getbyId(){
+
+			return $this->db->get_where($this->_table, ["id_detail_transaksi" => $id_detail_transaksi])->row();
 		}
 
 		public function insert(){
@@ -106,6 +117,7 @@
 			 $this->id_pegawai = $post["id_pegawai"];
 			 $this->id_detail_transaksi = $post["id_detail_transaksi"];
 			 $this->no_polisi = $post["no_polisi"];
+			 $this->status_transaksi = $post["status_transaksi"];
 			 
 			 $this->db->insert($this->_table, $this);
 
@@ -123,13 +135,14 @@
 			 $this->id_pegawai = $post["id_pegawai"];
 			 $this->id_detail_transaksi = $post["id_detail_transaksi"];
 			 $this->no_polisi = $post["no_polisi"];
+			 $this->status_transaksi = $post["status_transaksi"];
 
-			$this->db->update($this->_table, $this, array('id_transaksi' => $post['id_transaksi']));
+			$this->db->update($this->_table, $this, array('id_detail_transaksi' => $post['id_detail_transaksi']));
 		}
 
 		public function delete($id)
 		{
-			return $this->db->delete($this->_table, array("id_transaksi" => $id));
+			return $this->db->delete($this->_table, array("id_detail_transaksi" => $id));
 		}
 
 		public function search_transaksi($keyword)
@@ -142,6 +155,7 @@
 			 $this->id_pegawai = $post["id_pegawai"];
 			 $this->id_detail_transaksi = $post["id_detail_transaksi"];
 			 $this->no_polisi = $post["no_polisi"];
+			 $this->status_transaksi = $post["status_transaksi"];
 
 			$result = $this->db->get('detail_transaksi')->result();
 
@@ -170,7 +184,7 @@
 
 		}	
 
-		public function getAllNamaPegawwai(){
+		public function getAllNamaPegawai(){
 
 			$this->db->select('*');
 			$this->db->from('pegawai');

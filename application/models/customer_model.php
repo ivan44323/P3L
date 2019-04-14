@@ -12,11 +12,11 @@
 		
 		public function rules(){
 			return [
-				[
+				/*[
 					'field' => 'id_customer',
 					'label' => 'id_customer',
 					'rules' => 'required'
-				],
+				],*/
 
 				[
 					'field' => 'nama_customer',
@@ -53,7 +53,7 @@
 
 			 $post = $this->input->post();
 
-			 $this->id_customer = $post["id_customer"];
+			 //$this->id_customer = $post["id_customer"];
 			 $this->nama_customer = $post["nama_customer"];
 			 $this->alamat_customer = $post["alamat_customer"];
 			 $this->telepon_customer = $post["telepon_customer"];
@@ -67,7 +67,7 @@
 		{
 			$post = $this->input->post();
 			
-			$this->id_customer = $post["id_customer"];
+			 $this->id_customer = $post["id_customer"];
 			 $this->nama_customer = $post["nama_customer"];
 			 $this->alamat_customer = $post["alamat_customer"];
 			 $this->telepon_customer = $post["telepon_customer"];

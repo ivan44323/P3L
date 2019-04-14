@@ -132,6 +132,7 @@ class Page extends CI_Controller{
 		$data['sparepart_nama'] = $this->transaksi_penjualan_model->getAllNamaSparepart(); 
     $data['jasaservice_nama'] = $this->transaksi_penjualan_model->getAllNamaJasaService();
     $data['pegawai_nama'] = $this->transaksi_penjualan_model->getAllNamaPegawai();
+    $data['polisi_no'] = $this->transaksi_penjualan_model->getAllNoPolisi();
     $data['temp'] = 0;
     $data['search_keyword'] = " ";
     $data['content'] = 'Content/transaksi_penjualan';

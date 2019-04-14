@@ -168,5 +168,15 @@
 
 			return $query;
 		}
+
+		public function getAllNoPolisi(){
+
+			$this->db->select('*');
+			$this->db->from('kend_customer');
+ 
+			$query = $this->db->get()->result();
+
+			return $query;
+		}
 	}
 ?>

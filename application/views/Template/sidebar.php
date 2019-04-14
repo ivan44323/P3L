@@ -33,18 +33,18 @@
                       
                       <li><a><i class="fa fa-desktop"></i> Transaksi <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                          <li><a href="<?php echo site_url('Page/transaksi_penjualan');?>">Input Transaksi</a></li>
+                          <li><a href="<?php echo site_url('Page/transaksi_penjualan');?>">Transaksi Penjualan</a></li>
                         </ul>
                       </li>
                       
                       <li><a><i class="fa fa-edit"></i> Data Master <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                          <li><a href="<?php echo site_url('Page/input_jasa_service');?>">Input Data Jasa Service</a></li>
-                          <li><a href="<?php echo site_url('Page/input_supplier'); ?>">Input Data Supplier</a></li>
-                          <li><a href="<?php echo site_url('Page/input_customer'); ?>">Input Data Customer</a></li>
-                          <li><a href="<?php echo site_url('Page/input_pegawai'); ?>">Input Data Pegawai</a></li>
-                          <li><a href="<?php echo site_url('Page/input_sparepart'); ?>">Input Data Sparepart</a></li>
-                          <li><a href="<?php echo site_url('Page/input_kendaraan_customer'); ?>">Input Kendaraan Customer</a></li>
+                          <li><a href="<?php echo site_url('Page/input_jasa_service');?>">Data Jasa Service</a></li>
+                          <li><a href="<?php echo site_url('Page/input_supplier'); ?>">Data Supplier</a></li>
+                          <li><a href="<?php echo site_url('Page/input_customer'); ?>">Data Customer</a></li>
+                          <li><a href="<?php echo site_url('Page/input_pegawai'); ?>">Data Pegawai</a></li>
+                          <li><a href="<?php echo site_url('Page/input_sparepart'); ?>">Data Sparepart</a></li>
+                          <li><a href="<?php echo site_url('Page/input_kendaraan_customer'); ?>">Data Kendaraan Customer</a></li>
                         </ul>
                       </li>
 
@@ -56,7 +56,7 @@
 
                     <li><a><i class="fa fa-desktop"></i> Transaksi <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
-                        <li><a>Penjualan</a></li>
+                      <li><a href="<?php echo site_url('Page/transaksi_penjualan');?>">Transaksi Penjualan</a></li>
                       </ul>
                     </li>
                   <?php endif;?>  

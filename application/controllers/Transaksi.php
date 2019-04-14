@@ -42,7 +42,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             
             $data['jasaservice_nama'] = $this->transaksi_penjualan_model->getAllNamaJasaService();
 
-            $data['pegawai_nama'] = $this->transaksi_penjualan_model->getAllNamaPegawai();
+			$data['pegawai_nama'] = $this->transaksi_penjualan_model->getAllNamaPegawai();
+			
+			$data['polisi_no'] = $this->transaksi_penjualan_model->getAllNoPolisi();
             
 			$data['temp'] = 0;
 			

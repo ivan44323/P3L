@@ -62,7 +62,7 @@
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Jumlah Sparepart </label>
                 <div class="col-md-2 col-sm-6 col-xs-12">
-                  <input type="text" id="jumlah_sparepart" class="form-control col-md-7 col-xs-12" name="jumlah_sparepart">
+                  <input type="text" id="jumlah_sparepart" class="form-control col-md-7 col-xs-12" name="jumlah_sparepart" value="<?php echo $sparepart_edit->jumlah_sparepart ?>">
                 </div>
               </div>
 

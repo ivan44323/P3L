@@ -128,7 +128,7 @@
                     <td width="250">
                       <a href="<?php echo site_url('Supplier/edit/'. $supplier->id_supplier) ?>"
                       class="btn btn-dark btn-sm"><i class="fa fa-edit"></i> Edit</a>
-                      <a href="<?php echo site_url('Supplier/delete/'. $supplier->is_supplier) ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                      <a href="<?php echo site_url('Supplier/delete/'. $supplier->id_supplier) ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
                     </td> 
                   </tr>
                 <?php endforeach; ?>    
